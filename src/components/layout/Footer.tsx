@@ -111,7 +111,7 @@ export function Footer() {
                   className="flex items-start gap-3 text-background/70 hover:text-primary transition-colors"
                 >
                   <Phone className="w-5 h-5 mt-0.5 flex-shrink-0 text-primary" />
-                  <span>+1 (234) 567-890</span>
+                  <span>+91 9920971479</span>
                 </a>
               </li>
               <li>

@@ -165,7 +165,7 @@ export function BookingSection() {
                   </label>
                   <Input
                     type="tel"
-                    placeholder="+1 (234) 567-890"
+                    placeholder="+91 9920971479"
                     value={formData.phone}
                     onChange={(e) => handleInputChange("phone", e.target.value)}
                     required

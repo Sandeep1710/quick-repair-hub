@@ -48,7 +48,7 @@ export function Header() {
               className="flex items-center gap-2 text-sm font-medium text-foreground"
             >
               <Phone className="w-4 h-4 text-primary" />
-              +1 (234) 567-890
+              +91 9920971479
             </a>
             <Button asChild>
               <a href="#booking">Book Now</a>
@@ -96,7 +96,7 @@ export function Header() {
                   className="flex items-center gap-2 text-base font-medium text-foreground"
                 >
                   <Phone className="w-5 h-5 text-primary" />
-                  +1 (234) 567-890
+                  +91 9920971479
                 </a>
                 <Button asChild className="w-full">
                   <a href="#booking">Book Now</a>
