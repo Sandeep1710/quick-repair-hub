@@ -46,32 +46,29 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.1,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, scale: 0.9 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
-    scale: 1,
-    transition: { duration: 0.4 },
+    y: 0,
+    transition: { duration: 0.5 },
   },
 };
 
 export function WhyChooseUs() {
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl">
-          <div className="absolute top-20 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-        </div>
-      </div>
+    <section className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      }} />
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -80,13 +77,15 @@ export function WhyChooseUs() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="text-primary font-medium text-sm uppercase tracking-wider">
+          <span className="text-accent font-medium text-sm uppercase tracking-widest">
             Why Choose Us
           </span>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mt-2 mb-4">
-            Trusted by Thousands of Happy Customers
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mt-3 mb-5 tracking-tight">
+            Trusted by Thousands
+            <br />
+            of Happy Customers
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-primary-foreground/70 text-lg leading-relaxed">
             We're committed to providing the best repair experience with quality service 
             and customer satisfaction as our top priorities.
           </p>
@@ -98,33 +97,30 @@ export function WhyChooseUs() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
               variants={itemVariants}
-              className="group relative"
+              className="group"
             >
-              <div className="relative bg-card rounded-2xl p-8 h-full border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300">
-                {/* Icon with background */}
-                <div className="relative mb-6">
-                  <div className="absolute inset-0 w-16 h-16 bg-primary/10 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-300" />
-                  <div className="relative w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20">
-                    <feature.icon className="w-8 h-8 text-primary-foreground" />
-                  </div>
+              <div className="relative bg-primary-foreground/5 backdrop-blur-sm rounded-xl p-8 h-full border border-primary-foreground/10 hover:bg-primary-foreground/10 transition-all duration-300">
+                {/* Icon */}
+                <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-6">
+                  <feature.icon className="w-7 h-7 text-accent-foreground" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-display font-semibold text-foreground mb-3">
+                <h3 className="text-xl font-display font-semibold mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-primary-foreground/70 leading-relaxed">
                   {feature.description}
                 </p>
 
-                {/* Decorative Number */}
-                <div className="absolute top-6 right-6 text-6xl font-bold text-muted/20 group-hover:text-primary/10 transition-colors">
+                {/* Number */}
+                <div className="absolute top-6 right-6 text-5xl font-display font-bold text-primary-foreground/5">
                   {String(index + 1).padStart(2, "0")}
                 </div>
               </div>
