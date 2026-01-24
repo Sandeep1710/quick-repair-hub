@@ -1,48 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* Friendly & Approachable - Warm Orange/Coral Palette */
-    --background: 30 33% 98%;
-    --foreground: 24 10% 15%;
+    /* Classic Modern - Refined Navy & Gold Palette */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 24 10% 15%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 24 10% 15%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Primary - Warm Orange */
-    --primary: 24 95% 53%;
+    /* Primary - Deep Navy */
+    --primary: 222 47% 20%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Soft Teal */
-    --secondary: 174 42% 93%;
-    --secondary-foreground: 174 42% 25%;
+    /* Secondary - Soft Sage */
+    --secondary: 150 20% 94%;
+    --secondary-foreground: 150 30% 25%;
 
-    --muted: 30 20% 94%;
-    --muted-foreground: 24 10% 45%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 16% 47%;
 
-    /* Accent - Coral */
-    --accent: 12 76% 61%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Warm Gold */
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 20% 88%;
-    --input: 30 20% 88%;
-    --ring: 24 95% 53%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 222 47% 20%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     /* Custom tokens for repair service */
-    --success: 142 71% 45%;
+    --success: 158 64% 40%;
     --success-foreground: 0 0% 100%;
     --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 100%;
+    --warning-foreground: 222 47% 11%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -55,33 +57,33 @@
   }
 
   .dark {
-    --background: 24 10% 10%;
-    --foreground: 30 33% 98%;
+    --background: 222 47% 8%;
+    --foreground: 210 20% 98%;
 
-    --card: 24 10% 12%;
-    --card-foreground: 30 33% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: 24 10% 12%;
-    --popover-foreground: 30 33% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 24 95% 53%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 174 42% 15%;
-    --secondary-foreground: 174 42% 85%;
+    --secondary: 150 20% 15%;
+    --secondary-foreground: 150 30% 85%;
 
-    --muted: 24 10% 18%;
-    --muted-foreground: 30 20% 65%;
+    --muted: 222 47% 15%;
+    --muted-foreground: 215 16% 65%;
 
-    --accent: 12 76% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 38 92% 55%;
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 24 10% 20%;
-    --input: 24 10% 20%;
-    --ring: 24 95% 53%;
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 38 92% 50%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -101,6 +103,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   html {
@@ -110,10 +113,26 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent;
   }
 
   .glass-effect {
-    @apply bg-card/80 backdrop-blur-md border border-border/50;
+    @apply bg-card/90 backdrop-blur-xl border-b border-border/50 shadow-sm;
+  }
+
+  .elegant-shadow {
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+  }
+
+  .elegant-shadow-lg {
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.12), 0 4px 16px -4px rgba(0, 0, 0, 0.06);
+  }
+
+  .elegant-border {
+    @apply border border-border/60;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32;
   }
 }
